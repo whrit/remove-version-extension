@@ -5,19 +5,33 @@
     "version": "0.0.1",
     "publisher": "bwhrit",
     "engines": {
-        "vscode": "^1.50.0"
+        "vscode": "^1.50.0",
+        "node": ">=18.0.0"
     },
     "categories": [
         "Other"
     ],
+    "keywords": [
+        "python",
+        "requirements",
+        "dependencies",
+        "version"
+    ],
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "color": "#C80000",
+        "theme": "dark"
+    },
     "activationEvents": [
-        "onCommand:remove-version-extension.removeVersionSpecifiers"
+        "onLanguage:plaintext",
+        "workspaceContains:requirements.txt"
     ],
     "contributes": {
         "commands": [
             {
                 "command": "remove-version-extension.removeVersionSpecifiers",
-                "title": "Remove Version Specifiers"
+                "title": "Remove Version Specifiers",
+                "icon": "$(versions)"
             }
         ]
     },
@@ -31,8 +45,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/whrit/remove-version-extension.git"
+        "url": "https://github.com/openhands/remove-version-extension.git"
     },
+    "bugs": {
+        "url": "https://github.com/openhands/remove-version-extension/issues"
+    },
+    "homepage": "https://github.com/openhands/remove-version-extension#readme",
     "license": "MIT",
     "devDependencies": {
         "@types/node": "^22.0.0",

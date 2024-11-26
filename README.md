@@ -1,63 +1,65 @@
 # Remove Version Extension
 
-## Description
+A Visual Studio Code extension that removes version specifiers from `requirements.txt` files with a single click.
 
-A VS Code extension to remove version specifiers from `requirements.txt` files. For example, it converts `numpy==1.24.3` to `numpy`.
+## Features
 
-## Deployment Instructions on Mac OS
-
-1. **Prerequisites**:
-    - [Node.js](https://nodejs.org/) installed.
-    - [VS Code](https://code.visualstudio.com/) installed.
-
-2. **Clone the Repository**:
-    ```bash
-    git clone <repository_url>
-    cd remove_version_extension
-    ```
-
-3. **Install Dependencies**:
-    ```bash
-    npm install
-    ```
-
-4. **Compile the Extension**:
-    ```bash
-    npm run compile
-    ```
-
-5. **Package the Extension**:
-    ```bash
-    npm install -g @vscode/vsce
-    vsce package
-    ```
-
-6. **Install the Extension in VS Code**:
-    - Open VS Code.
-    - Go to the Extensions view (`Ctrl+Shift+X` or `Cmd+Shift+X` on Mac).
-    - Click on the three dots (`...`) in the top-right corner.
-    - Select `Install from VSIX...`.
-    - Navigate to the generated `.vsix` file and install it.
+- Removes version specifiers from Python requirements.txt files
+- Single-click operation via status bar button
+- Supports multiple version specifier formats:
+  - Exact versions (`==1.2.3`)
+  - Greater than (`>1.2.3`)
+  - Less than (`<1.2.3`)
+  - Greater than or equal (`>=1.2.3`)
+  - Less than or equal (`<=1.2.3`)
+  - Compatible release (`~=1.2.3`)
+  - At specifiers (`@1.2.3`)
 
 ## Usage
 
-1. **Open a `requirements.txt` File** in VS Code.
+1. Open a `requirements.txt` file in VS Code
+2. Click the "Remove Versions" button in the status bar (appears at the bottom of the window)
+3. All version specifiers will be automatically removed
 
-2. **Run the Extension Command**:
-    - Press `Ctrl+Shift+P` (or `Cmd+Shift+P` on Mac) to open the Command Palette.
-    - Type `Remove Version Specifiers` and select the command.
+Before:
+```
+numpy==1.24.3
+pandas>=1.5.0
+requests~=2.31.0
+```
 
-3. **Result**:
-    - All version specifiers (e.g., `==1.24.3`) will be removed from the dependencies.
+After:
+```
+numpy
+pandas
+requests
+```
 
-## Uninstall
+## Installation
 
-To uninstall the extension, go to the Extensions view, find the **Remove Version Extension**, and click `Uninstall`.
+Install through VS Code Extensions. Search for "Remove Version Extension"
 
-## Contributing
+## Requirements
 
-Feel free to open issues or submit pull requests.
+- Visual Studio Code 1.50.0 or higher
+
+## Extension Settings
+
+This extension contributes no additional settings.
+
+## Known Issues
+
+Please report issues on the [GitHub repository](https://github.com/openhands/remove-version-extension/issues).
+
+## Release Notes
+
+### 0.0.1
+
+Initial release:
+- Basic version removal functionality
+- Status bar button for easy access
+- Support for multiple version specifier formats
 
 ## License
 
-MIT License
+This extension is licensed under the [MIT License](LICENSE.md).
