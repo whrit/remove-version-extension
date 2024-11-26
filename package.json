@@ -1,0 +1,50 @@
+{
+    "name": "remove-version-extension",
+    "displayName": "Remove Version Extension",
+    "description": "A VS Code extension to remove version specifiers from requirements.txt files.",
+    "version": "0.0.1",
+    "publisher": "bwhrit",
+    "engines": {
+        "vscode": "^1.50.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onCommand:remove-version-extension.removeVersionSpecifiers"
+    ],
+    "contributes": {
+        "commands": [
+            {
+                "command": "remove-version-extension.removeVersionSpecifiers",
+                "title": "Remove Version Specifiers"
+            }
+        ]
+    },
+    "main": "./dist/extension.js",
+    "scripts": {
+        "vscode:prepublish": "npm run package",
+        "compile": "webpack",
+        "watch": "webpack --watch",
+        "package": "webpack --mode production --devtool hidden-source-map",
+        "test-compile": "tsc -p ./"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/whrit/remove-version-extension.git"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "@types/node": "^22.0.0",
+        "@types/vscode": "^1.50.0",
+        "@vscode/test-electron": "^2.0.0",
+        "ts-loader": "^9.5.1",
+        "typescript": "^4.0.0",
+        "webpack": "^5.96.1",
+        "webpack-cli": "^5.1.4"
+    },
+    "dependencies": {
+        "@types/fs-extra": "^11.0.4",
+        "@vscode/vsce": "^3.2.1"
+    }
+}
